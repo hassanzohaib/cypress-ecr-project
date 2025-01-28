@@ -22,3 +22,8 @@ jobs:
           record: true
           parallel: true
           group: "E2E Tests - Public ECR"
+          command-prefix: |
+            docker run --rm \
+              -v ${{ github.workspace }}:/e2e \
+              -w /e2e \
+              public.ecr.aws/r1v9r9j6/cypresss-image npx
