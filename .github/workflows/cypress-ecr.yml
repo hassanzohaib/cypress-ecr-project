@@ -26,7 +26,6 @@ jobs:
         with:
           browser: chrome  # Specify browser (e.g., chrome, firefox, edge)
           headed: false    # Run in headless mode
-          parallel: true   # Enable parallel execution
-          record: true     # Record results to Cypress Dashboard (optional)
+          parallel: true   # Enable parallel execution    # Record results to Cypress Dashboard (optional)
           group: "Run on Chrome"  # Group tests in Cypress Dashboard
           ci-build-id: ${{ github.run_id }}  # Unique ID for the run
