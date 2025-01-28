@@ -1,0 +1,24 @@
+name: Run Cypress Tests with Public ECR Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Pull Public Cypress Image
+      - name: Pull Public Cypress Image
+        run: |
+          docker pull 820242941736.dkr.ecr.us-east-1.amazonaws.com/cypresss-image
+
+      # Step 2: Use Cypress GitHub Action with Public Image
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          install: false
+          record: true
+          parallel: true
+          group: "E2E Tests - Public ECR"
