@@ -11,7 +11,7 @@ jobs:
       # Step 1: Pull Public Cypress Image
       - name: Pull Public Cypress Image
         run: |
-          docker pull 820242941736.dkr.ecr.us-east-1.amazonaws.com/cypresss-image
+          docker pull public.ecr.aws/r1v9r9j6/cypresss-image
 
       # Step 2: Use Cypress GitHub Action with Public Image
       - name: Cypress run
