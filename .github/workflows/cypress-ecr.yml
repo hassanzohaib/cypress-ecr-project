@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Pull Public Cypress Image
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       - name: Pull Public Cypress Image
         run: |
           docker pull public.ecr.aws/r1v9r9j6/cypresss-image
