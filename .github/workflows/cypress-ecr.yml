@@ -12,11 +12,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     container:
-      image: public.ecr.aws/r1v9r9j6/cypresss-image  # Replace with your custom Cypress image URL  # Token for public ECR access
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [1]  # Number of parallel containers
+      image: public.ecr.aws/r1v9r9j6/cypresss-image  # Replace with your custom Cypress image URL  # Token for public ECR access  # Number of parallel containers
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -25,7 +21,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome  # Specify browser (e.g., chrome, firefox, edge)
-          headed: false    # Run in headless mode
-          parallel: true   # Enable parallel execution    # Record results to Cypress Dashboard (optional)
-          group: "Run on Chrome"  # Group tests in Cypress Dashboard
-          ci-build-id: ${{ github.run_id }}  # Unique ID for the run
+          headed: false    # Run in headless mode  # Enable parallel execution    # Record results to Cypress Dashboard (optional)
+            # Unique ID for the run
