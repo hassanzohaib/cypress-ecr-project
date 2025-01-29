@@ -20,6 +20,6 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          browser: firefox  # Specify browser (e.g., chrome, firefox, edge)
+          browser: edge  # Specify browser (e.g., chrome, firefox, edge)
           headed: false    # Run in headless mode  # Enable parallel execution    # Record results to Cypress Dashboard (optional)
             # Unique ID for the run
